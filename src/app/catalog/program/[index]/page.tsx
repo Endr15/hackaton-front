@@ -24,7 +24,7 @@ export default function Page({ params }: { params: { index: string } }) {
 			<h2>Название программы</h2>
 			<p>description</p>
 		</div>
-		<div className={styles.description}>Джимми Фэллон ведет "Вечернее шоу" и берет интервью у знаменитостей, играет
+		<div className={styles.description}>Джимми Фэллон ведет Вечернее шоу и берет интервью у знаменитостей, играет
 			с
 			ними в игры и приглашает гостей выступить в мюзикле или комедии.
 		</div>

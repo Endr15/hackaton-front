@@ -6,7 +6,6 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 export default function Page({ params }: { params: { slug: string } }) {
-
 	const [isOpen, setIsOpen] = useState<boolean>(false)
 
 	const router = useRouter()
@@ -31,7 +30,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 		</div>
 		{isOpen ? (
 			<>
-				<div className={styles.description}>Джимми Фэллон ведет "Вечернее шоу" и берет интервью у знаменитостей, играет
+				<div className={styles.description}>Джимми Фэллон ведет Вечернее шоу и берет интервью у знаменитостей, играет
 					с
 					ними в игры и приглашает гостей выступить в мюзикле или комедии.
 				</div>

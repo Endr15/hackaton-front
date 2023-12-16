@@ -107,7 +107,7 @@ export default function Home() {
 					<Tab className={styles.tab} key='tv' title='Каналы'>
 						<ul className={styles.tabList}>
 							<li>
-								<img width={80} height={80} alt='programm' src='/programm.png' />
+								<img width={80} height={80} alt='programm' src='/program/improvization.png' />
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
@@ -119,7 +119,7 @@ export default function Home() {
 							</li>
 
 							<li>
-								<img width={80} height={80} alt='programm' src='/programm.png' />
+								<img width={80} height={80} alt='programm' src='/program/improvization.png' />
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
@@ -131,7 +131,7 @@ export default function Home() {
 							</li>
 
 							<li>
-								<img width={80} height={80} alt='programm' src='/programm.png' />
+								<img width={80} height={80} alt='programm' src='/program/improvization.png' />
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
@@ -147,7 +147,7 @@ export default function Home() {
 					<Tab className={styles.tab} key='programm' title='Тв-программы'>
 						<ul className={styles.tabList}>
 							<li>
-								<img width={80} height={80} alt='programm' src='/programm.png' />
+								<img width={80} height={80} alt='programm' src='/program/improvization.png' />
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
@@ -159,7 +159,7 @@ export default function Home() {
 							</li>
 
 							<li>
-								<img width={80} height={80} alt='programm' src='/programm.png' />
+								<img width={80} height={80} alt='programm' src='/program/improvization.png' />
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
@@ -171,7 +171,7 @@ export default function Home() {
 							</li>
 
 							<li>
-								<img width={80} height={80} alt='programm' src='/programm.png' />
+								<img width={80} height={80} alt='programm' src='/program/improvization.png' />
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>

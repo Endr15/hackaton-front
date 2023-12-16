@@ -11,9 +11,7 @@ export default function Navbar() {
 
 	const currentPath = usePathname().split('/')[1]
 
-	const isProgram = usePathname().split('').length >= 10
-	console.log(usePathname().split('').length)
-	console.log(isProgram)
+	const isProgram = usePathname().split('/').length >= 3
 
 	const title = linkItems.map(item => {
 		if (currentPath == item.url) return item.title

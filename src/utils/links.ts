@@ -14,7 +14,7 @@ export const linkItems = [
 		rightIcon: '/ui/filter.svg',
 	},
 	{
-		title: 'Подборка',
+		title: 'Подбор',
 		url: 'compilation',
 		imageSrc: '/ui/light.svg',
 		accentImageSrc: '/ui/light-accent.svg',

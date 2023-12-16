@@ -120,7 +120,7 @@ export default function Page({ params }: { params: { index: string } }) {
 
 			<ul className={styles.recommendList}>
 				<li>
-					<img width={80} height={80} alt='programm' src='/programm.png' />
+					<img width={80} height={80} alt='programm' src='/program/improvization.png' />
 					<div className={styles.cardContent}>
 						<p>Канал</p>
 						<h4>Название передачи</h4>

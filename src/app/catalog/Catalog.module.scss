@@ -9,17 +9,18 @@
 .tabList {
   @apply mt-5;
   li {
-    a {
+    .tabListItem {
       @apply flex w-full my-2.5;
 
-      img {
+      a {
         @apply rounded;
       }
 
       .cardContent {
         @apply flex bg-bg-2 ml-2.5 rounded-lg p-2 items-center justify-between;
+        min-width: 250px;
 
-        div {
+        a {
           p {
             @apply font-montserrat font-medium text-sm text-left;
           }
@@ -29,7 +30,7 @@
           }
 
           div {
-            @apply m-2;
+            @apply m-1;
           }
         }
 
@@ -51,4 +52,8 @@
   button {
     @apply bg-accent text-black;
   }
+}
+
+.dropDown, .dropDownButton {
+  @apply z-20;
 }

@@ -16,7 +16,7 @@ export default function Footer() {
 
 			{linkItems.map(item => (
 				<Link href={`/${item.url}`} className={styles.footerItem} key={item.title}>
-					<Image width={20} height={20} src={currentPath == item.url ? item.accentImageSrc : item.imageSrc}
+					<Image width={25} height={25} src={currentPath == item.url ? item.accentImageSrc : item.imageSrc}
 								 alt={item.url} />
 					<p>{item.title}</p>
 				</Link>

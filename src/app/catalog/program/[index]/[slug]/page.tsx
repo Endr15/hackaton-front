@@ -26,7 +26,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 		<VideoPlayer videoPath='/video.mp4' />
 
 		<div className={styles.content}>
-			<Image width={64} height={64} src='/tv/1.png' alt='channel' />
+			<img width={64} height={64} src='/tv/1.png' alt='channel' />
 			<div>
 				<h2>Название сериала</h2>
 				<p>номер серии</p>
@@ -40,21 +40,21 @@ export default function Page({ params }: { params: { slug: string } }) {
 			<Tabs aria-label='Options' radius='full'>
 				<Tab key='photos' title='1 сезон'>
 					<Link href='#' className={styles.series}>
-						<Image width={200} height={120} src='/poster.png' alt='poster' />
+						<img width={200} height={120} src='/poster.png' alt='poster' />
 						<h3>Заголовок</h3>
 						<p>Description</p>
 					</Link>
 				</Tab>
 				<Tab key='music' title='2 сезон'>
 					<Link href='#'>
-						<Image width={200} height={120} src='/poster.png' alt='poster' />
+						<img width={200} height={120} src='/poster.png' alt='poster' />
 						<h3>Заголовок</h3>
 						<p>Description</p>
 					</Link>
 				</Tab>
 				<Tab key='videos' title='3 сезон'>
 					<Link href='#'>
-						<Image width={200} height={120} src='/poster.png' alt='poster' />
+						<img width={200} height={120} src='/poster.png' alt='poster' />
 						<h3>Заголовок</h3>
 						<p>Description</p>
 					</Link>
@@ -70,7 +70,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 			<ul className={styles.commentsList}>
 				<li className={styles.commentItem}>
 					<div className={styles.title}>
-						<Image width={64} height={64} src='/ui/avatar-default.png' alt='avatar' />
+						<img width={64} height={64} src='/ui/avatar-default.png' alt='avatar' />
 
 						<div>
 							<h4>Имя Фамилия</h4>
@@ -91,7 +91,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 
 				<li className={styles.commentItem}>
 					<div className={styles.title}>
-						<Image width={64} height={64} src='/ui/avatar-default.png' alt='avatar' />
+						<img width={64} height={64} src='/ui/avatar-default.png' alt='avatar' />
 
 						<div>
 							<h4>Имя Фамилия</h4>

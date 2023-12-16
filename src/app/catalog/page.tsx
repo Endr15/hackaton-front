@@ -19,7 +19,7 @@ export default function Catalog() {
 						<ul className={styles.tabList}>
 							<li>
 								<Link href='/catalog/tv/1'>
-									<Image width={80} height={80} alt='programm' src='/tv/tnt.png' />
+									<img width={80} height={80} alt='programm' src='/tv/tnt.png' />
 									<div className={styles.cardContent}>
 										<div>
 											<p>название канала</p>
@@ -47,7 +47,7 @@ export default function Catalog() {
 						<ul className={styles.tabList}>
 							<li>
 								<Link href='/catalog/program/1'>
-									<Image width={80} height={80} alt='programm' src='/programm.png' />
+									<img width={80} height={80} alt='programm' src='/programm.png' />
 									<div className={styles.cardContent}>
 										<div>
 											<h4>Название канала</h4>

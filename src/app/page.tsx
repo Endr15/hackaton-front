@@ -22,12 +22,12 @@ export default function Home() {
 					onSwiper={(swiper) => console.log(swiper)}
 					autoplay={{ delay: 5000 }}
 				>
-					<SwiperSlide className={styles.slide}><Image width={400} height={180} src='/slider.png'
-																											 alt='slider' /></SwiperSlide>
-					<SwiperSlide className={styles.slide}><Image width={400} height={180} src='/slider.png'
-																											 alt='slider' /></SwiperSlide>
-					<SwiperSlide className={styles.slide}><Image width={400} height={180} src='/slider.png'
-																											 alt='slider' /></SwiperSlide>
+					<SwiperSlide className={styles.slide}><img width={400} height={180} src='/slider.png'
+																										 alt='slider' /></SwiperSlide>
+					<SwiperSlide className={styles.slide}><img width={400} height={180} src='/slider.png'
+																										 alt='slider' /></SwiperSlide>
+					<SwiperSlide className={styles.slide}><img width={400} height={180} src='/slider.png'
+																										 alt='slider' /></SwiperSlide>
 				</Swiper>
 			</div>
 			<div className={styles.buttonWrapper}>
@@ -42,21 +42,21 @@ export default function Home() {
 					<Swiper slidesPerView={2} spaceBetween={25}>
 						<SwiperSlide className={styles.forYouSlide}>
 							<Link href='#'>
-								<Image width={200} height={120} src='/poster.png' alt='poster' />
+								<img width={200} height={120} src='/poster.png' alt='poster' />
 								<h3>Заголовок</h3>
 								<p>Description</p>
 							</Link>
 						</SwiperSlide>
 						<SwiperSlide className={styles.forYouSlide}>
 							<Link href='#'>
-								<Image width={200} height={120} src='/poster.png' alt='poster' />
+								<img width={200} height={120} src='/poster.png' alt='poster' />
 								<h3>Заголовок</h3>
 								<p>Description</p>
 							</Link>
 						</SwiperSlide>
 						<SwiperSlide className={styles.forYouSlide}>
 							<Link href='#'>
-								<Image width={200} height={120} src='/poster.png' alt='poster' />
+								<img width={200} height={120} src='/poster.png' alt='poster' />
 								<h3>Заголовок</h3>
 								<p>Description</p>
 							</Link>
@@ -76,21 +76,21 @@ export default function Home() {
 					<Swiper slidesPerView={2} spaceBetween={25}>
 						<SwiperSlide className={styles.forYouSlide}>
 							<Link href='#'>
-								<Image width={200} height={120} src='/poster-big.png' alt='poster' />
+								<img width={200} height={120} src='/poster-big.png' alt='poster' />
 								<h3>Заголовок</h3>
 								<p>Description</p>
 							</Link>
 						</SwiperSlide>
 						<SwiperSlide className={styles.forYouSlide}>
 							<Link href='#'>
-								<Image width={200} height={120} src='/poster-big.png' alt='poster' />
+								<img width={200} height={120} src='/poster-big.png' alt='poster' />
 								<h3>Заголовок</h3>
 								<p>Description</p>
 							</Link>
 						</SwiperSlide>
 						<SwiperSlide className={styles.forYouSlide}>
 							<Link href='#'>
-								<Image width={200} height={120} src='/poster-big.png' alt='poster' />
+								<img width={200} height={120} src='/poster-big.png' alt='poster' />
 								<h3>Заголовок</h3>
 								<p>Description</p>
 							</Link>
@@ -107,7 +107,7 @@ export default function Home() {
 					<Tab className={styles.tab} key='tv' title='Каналы'>
 						<ul className={styles.tabList}>
 							<li>
-								<Image width={80} height={80} alt='programm' src='/programm.png' />
+								<img width={80} height={80} alt='programm' src='/programm.png' />
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
@@ -119,7 +119,7 @@ export default function Home() {
 							</li>
 
 							<li>
-								<Image width={80} height={80} alt='programm' src='/programm.png' />
+								<img width={80} height={80} alt='programm' src='/programm.png' />
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
@@ -131,7 +131,7 @@ export default function Home() {
 							</li>
 
 							<li>
-								<Image width={80} height={80} alt='programm' src='/programm.png' />
+								<img width={80} height={80} alt='programm' src='/programm.png' />
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
@@ -147,7 +147,7 @@ export default function Home() {
 					<Tab className={styles.tab} key='programm' title='Тв-программы'>
 						<ul className={styles.tabList}>
 							<li>
-								<Image width={80} height={80} alt='programm' src='/programm.png' />
+								<img width={80} height={80} alt='programm' src='/programm.png' />
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
@@ -159,7 +159,7 @@ export default function Home() {
 							</li>
 
 							<li>
-								<Image width={80} height={80} alt='programm' src='/programm.png' />
+								<img width={80} height={80} alt='programm' src='/programm.png' />
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
@@ -171,7 +171,7 @@ export default function Home() {
 							</li>
 
 							<li>
-								<Image width={80} height={80} alt='programm' src='/programm.png' />
+								<img width={80} height={80} alt='programm' src='/programm.png' />
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>

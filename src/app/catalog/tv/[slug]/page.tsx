@@ -21,7 +21,7 @@ export default function Page({ params }: { params: { slug: string } }) {
 		<VideoPlayer videoPath='/video.mp4' />
 
 		<div className={styles.content}>
-			<Image width={64} height={64} src='/tv/1.png' alt='channel' />
+			<img width={64} height={64} src='/tv/1.png' alt='channel' />
 			<div>
 				<h2>Название канала</h2>
 				<p>description</p>

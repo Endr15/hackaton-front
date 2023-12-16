@@ -12,7 +12,7 @@ export default function Page({ params }: { params: { index: string } }) {
 	const router = useRouter()
 
 	return <section className={styles.programSection}>
-		<Image width={500} height={220} src='/tv/bg.png' alt='bg' className={styles.poster} />
+		<img width={500} height={220} src='/tv/bg.png' alt='bg' className={styles.poster} />
 
 		<div className={styles.nav}>
 			<button onClick={() => router.push('/catalog')}><Image width={20} height={20} src='/ui/back.svg' alt='back' />
@@ -41,21 +41,21 @@ export default function Page({ params }: { params: { index: string } }) {
 			<Tabs aria-label='Options' radius='full'>
 				<Tab key='photos' title='1 сезон'>
 					<Link href='/catalog/program/1/1' className={styles.series}>
-						<Image width={200} height={120} src='/poster.png' alt='poster' />
+						<img width={200} height={120} src='/poster.png' alt='poster' />
 						<h3>Заголовок</h3>
 						<p>Description</p>
 					</Link>
 				</Tab>
 				<Tab key='music' title='2 сезон'>
 					<Link href='/catalog/program/1/1'>
-						<Image width={200} height={120} src='/poster.png' alt='poster' />
+						<img width={200} height={120} src='/poster.png' alt='poster' />
 						<h3>Заголовок</h3>
 						<p>Description</p>
 					</Link>
 				</Tab>
 				<Tab key='videos' title='3 сезон'>
 					<Link href='/catalog/program/1/1'>
-						<Image width={200} height={120} src='/poster.png' alt='poster' />
+						<img width={200} height={120} src='/poster.png' alt='poster' />
 						<h3>Заголовок</h3>
 						<p>Description</p>
 					</Link>
@@ -71,7 +71,7 @@ export default function Page({ params }: { params: { index: string } }) {
 			<ul className={styles.commentsList}>
 				<li className={styles.commentItem}>
 					<div className={styles.title}>
-						<Image width={64} height={64} src='/ui/avatar-default.png' alt='avatar' />
+						<img width={64} height={64} src='/ui/avatar-default.png' alt='avatar' />
 
 						<div>
 							<h4>Имя Фамилия</h4>
@@ -92,7 +92,7 @@ export default function Page({ params }: { params: { index: string } }) {
 
 				<li className={styles.commentItem}>
 					<div className={styles.title}>
-						<Image width={64} height={64} src='/ui/avatar-default.png' alt='avatar' />
+						<img width={64} height={64} src='/ui/avatar-default.png' alt='avatar' />
 
 						<div>
 							<h4>Имя Фамилия</h4>
@@ -120,7 +120,7 @@ export default function Page({ params }: { params: { index: string } }) {
 
 			<ul className={styles.recommendList}>
 				<li>
-					<Image width={80} height={80} alt='programm' src='/programm.png' />
+					<img width={80} height={80} alt='programm' src='/programm.png' />
 					<div className={styles.cardContent}>
 						<p>Канал</p>
 						<h4>Название передачи</h4>

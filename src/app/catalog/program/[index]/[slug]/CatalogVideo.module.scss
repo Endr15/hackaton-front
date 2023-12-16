@@ -1,0 +1,177 @@
+.nav {
+  @apply px-2 pt-2 pb-5 flex justify-between;
+
+  h2 {
+    @apply font-montserrat font-semibold text-lg text-white;
+  }
+}
+
+.back {
+  @apply m-4 z-20;
+
+  img {
+    @apply z-40;
+  }
+}
+
+.videoSection {
+  @apply absolute top-0 left-0 w-full;
+}
+
+.video {
+  @apply absolute top-0 left-0 w-full;
+}
+
+.content {
+  @apply flex m-5 items-center;
+
+  div {
+    @apply pl-4;
+
+    h2 {
+      @apply font-montserrat font-semibold text-lg text-white;
+    }
+
+    p {
+      @apply font-montserrat font-semibold text-sm;
+    }
+  }
+
+  button {
+    @apply absolute right-0 pr-5;
+  }
+}
+
+.description {
+  @apply mx-5 font-montserrat font-medium text-sm text-white;
+}
+
+.rating {
+  @apply flex mx-5 my-5;
+
+  div {
+    @apply flex mr-10;
+
+    span {
+      @apply pl-2 font-graphik font-semibold text-base;
+    }
+  }
+
+  p {
+    @apply font-montserrat font-medium text-white text-sm underline;
+  }
+}
+
+.programList {
+  @apply mb-12;
+  li {
+    @apply px-5 py-3 flex items-center border-b-1 border-line first:border-t-1 last:border-b-1;
+
+    span {
+      @apply font-graphik font-semibold text-base text-white;
+    }
+
+    div {
+      @apply pl-4;
+      h3 {
+        @apply font-graphik font-semibold text-base text-white;
+      }
+
+      p {
+        @apply font-montserrat font-semibold text-sm;
+      }
+    }
+  }
+}
+
+.seasons {
+  @apply m-5;
+
+  h2 {
+    @apply font-montserrat font-semibold text-lg text-white pb-2.5;
+  }
+}
+
+.series {
+  h3 {
+    @apply font-graphik font-semibold text-white pt-1;
+  }
+
+  p {
+    @apply font-montserrat font-medium text-base;
+    max-width: 200px;
+  }
+}
+
+.comments {
+  @apply mx-5 mt-5 mb-16;
+
+  h2 {
+    @apply font-montserrat font-semibold text-lg text-white mb-4;
+  }
+
+  .title {
+    @apply p-2 flex;
+
+    div {
+      @apply pl-5;
+
+      h4 {
+        @apply font-graphik font-semibold text-white text-base;
+      }
+
+      p {
+        @apply font-montserrat font-medium text-sm;
+      }
+
+      div {
+        @apply p-0;
+      }
+    }
+  }
+}
+
+.commentItem {
+  @apply bg-bg-2 rounded-lg pb-2 mb-2.5;
+}
+
+.description {
+  @apply px-2;
+  margin: 0 !important;
+}
+
+.rate {
+  @apply flex;
+
+  img {
+    @apply mr-0.5;
+  }
+}
+
+.slider {
+  @apply mt-5 mb-16;
+}
+
+.recommendList {
+  li {
+    @apply flex w-full my-2.5;
+
+    img {
+      @apply rounded;
+    }
+
+    .cardContent {
+      @apply bg-bg-2 ml-2.5 rounded-lg p-2;
+
+      p {
+        @apply font-montserrat font-medium text-sm text-left;
+      }
+
+      h4 {
+        @apply font-montserrat font-semibold text-lg text-white text-left pr-16;
+      }
+    }
+  }
+}
+
+

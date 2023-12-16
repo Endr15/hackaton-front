@@ -1,0 +1,11 @@
+.navbar {
+  @apply mt-5 flex justify-center;
+
+  h1 {
+    @apply font-montserrat font-semibold text-lg text-white text-center;
+  }
+
+  a, button {
+    @apply absolute right-5;
+  }
+}

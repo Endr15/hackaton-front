@@ -1,0 +1,85 @@
+.nav {
+  @apply px-2 pt-2 pb-5 flex justify-between;
+
+  h2 {
+    @apply font-montserrat font-semibold text-lg text-white;
+  }
+}
+
+.back {
+  @apply m-4 z-20;
+
+  img {
+    @apply z-40;
+  }
+}
+
+.videoSection {
+  @apply absolute top-0 left-0 w-full;
+}
+
+.video {
+  @apply absolute top-0 left-0 w-full;
+}
+
+.content {
+  @apply flex m-5 items-center;
+
+  div {
+    @apply pl-4;
+
+    h2 {
+      @apply font-montserrat font-semibold text-lg text-white;
+    }
+
+    p {
+      @apply font-montserrat font-semibold text-sm;
+    }
+  }
+
+  button {
+    @apply absolute right-0 pr-5;
+  }
+}
+
+.description {
+  @apply mx-5 font-montserrat font-medium text-sm text-white;
+}
+
+.rating {
+  @apply flex mx-5 my-5;
+
+  div {
+    @apply flex mr-10;
+
+    span {
+      @apply pl-2 font-graphik font-semibold text-base;
+    }
+  }
+
+  p {
+    @apply font-montserrat font-medium text-white text-sm underline;
+  }
+}
+
+.programList {
+  @apply mb-12;
+  li {
+    @apply px-5 py-3 flex items-center border-b-1 border-line first:border-t-1 last:border-b-1;
+
+    span {
+      @apply font-graphik font-semibold text-base text-white;
+    }
+
+    div {
+      @apply pl-4;
+      h3 {
+        @apply font-graphik font-semibold text-base text-white;
+      }
+
+      p {
+        @apply font-montserrat font-semibold text-sm;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.footer {
+  @apply z-10 w-full fixed bottom-0 flex justify-around items-center border-t-line pt-2.5 bg-bg;
+  border-top-width: 0.5px;
+
+  a {
+    img {
+      margin: auto;
+    }
+
+    p {
+      @apply text-center font-montserrat font-medium text-base text-txt-gray;
+    }
+  }
+}

@@ -1,0 +1,92 @@
+.slider {
+  @apply m-5 flex justify-center;
+}
+
+.slide {
+  @apply rounded;
+
+  img {
+    margin: 0;
+  }
+}
+
+.buttonWrapper {
+  @apply block text-center w-full px-5 mb-5;
+}
+
+.button {
+  @apply w-full bg-accent font-montserrat font-semibold text-lg text-black;
+}
+
+.forYou {
+  @apply m-5 font-graphik font-semibold text-white text-xl;
+
+  h2 {
+    @apply mb-4;
+  }
+
+  div {
+
+  }
+}
+
+.forYouSlide {
+  @apply rounded;
+
+  a {
+    h3 {
+      @apply font-graphik font-semibold text-white pt-1;
+    }
+
+    p {
+      @apply font-montserrat font-medium text-base;
+      max-width: 200px;
+    }
+  }
+}
+
+.title {
+  @apply flex justify-between items-center;
+
+  a {
+    @apply font-graphik font-semibold text-base text-accent underline;
+  }
+}
+
+.list {
+  @apply text-center mt-5 mb-16;
+
+  h2 {
+    @apply font-graphik font-semibold text-xl text-white text-left pl-5;
+  }
+}
+
+.tabs {
+  @apply mt-2.5;
+}
+
+.tab {
+  @apply px-5;
+}
+
+.tabList {
+  li {
+    @apply flex w-full my-2.5;
+
+    img {
+      @apply rounded;
+    }
+
+    .cardContent {
+      @apply bg-bg-2 ml-2.5 rounded-lg p-2;
+
+      p {
+        @apply font-montserrat font-medium text-sm text-left;
+      }
+
+      h4 {
+        @apply font-montserrat font-semibold text-lg text-white text-left;
+      }
+    }
+  }
+}

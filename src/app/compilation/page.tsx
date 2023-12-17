@@ -16,7 +16,7 @@ export default function Compilation() {
 	const listEmotions = [
 		{
 			name: 'Радость',
-			iconSrc: '/emotion/happy.svg',
+			iconSrc: '/ui/happy.svg',
 		},
 		{
 			name: 'Гнев',
@@ -49,7 +49,7 @@ export default function Compilation() {
 					<SwiperSlide className={styles.emotionsWrapper}>
 						{listEmotions.map(item => (
 							<div className={styles.emotionItem} key={item.name}>
-								<div><Image width={80} height={80} src={item.iconSrc} alt={item.name} /></div>
+								<Image width={80} height={80} src={item.iconSrc} alt={item.name} />
 
 								<span>{item.name}</span>
 							</div>

@@ -18,13 +18,10 @@
 .emotionItem {
   @apply m-1 rounded;
 
-  div {
-    @apply bg-bg-2 rounded-lg p-5 text-center;
-
-    img {
-      margin: auto;
-    }
+  img {
+    margin: auto;
   }
+
 
   span {
     @apply font-montserrat font-medium text-sm text-white;

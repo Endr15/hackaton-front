@@ -18,7 +18,7 @@ export default function Page({ params }: { params: { index: string } }) {
 	const [program] = _.filter(programsArray, _.some)
 
 	return <section className={styles.programSection}>
-		<img width={500} height={220} src='/tv/bg.png' alt='bg' className={styles.poster} />
+		<img width={500} height={220} src={`/program/${program?.id}.jpg`} alt='bg' className={styles.poster} />
 
 		<div className={styles.nav}>
 			<button onClick={() => router.push('/catalog')}><Image width={20} height={20} src='/ui/back.svg' alt='back' />

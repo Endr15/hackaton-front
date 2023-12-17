@@ -3,7 +3,7 @@ export const TvChannels = [
 		id: 'tnt',
 		name: 'ТНТ',
 		currentProgram: 'Импровизация',
-		currentProgramId: 'improvization',
+		currentProgramId: 'improvisation',
 		programDesc: 'Импровизация - лучшее шоу современности',
 		rating: 4.8,
 		commentsCount: 152,
@@ -17,7 +17,7 @@ export const TvChannels = [
 			},
 			{
 				time: '18:30',
-				name: 'Ночные новости NBC c Лестером Холтом',
+				name: 'Импровизация',
 				desc: 'Новости, 30 мин, 0+',
 				active: true,
 				will: false,
@@ -60,15 +60,15 @@ export const TvChannels = [
 		timetable: [
 			{
 				time: '17:30',
-				name: 'Вечерние новости',
-				desc: 'Новости, 60 мин, 0+',
+				name: 'Сериал',
+				desc: 'Сериалы, 60 мин, 0+',
 				active: false,
 				will: false,
 			},
 			{
 				time: '18:30',
-				name: 'Сериал',
-				desc: 'Сериалы, 60 мин, 12+',
+				name: 'Вечерние новости',
+				desc: 'Новости, 60 мин, 12+',
 				active: true,
 				will: false,
 			},
@@ -110,15 +110,15 @@ export const TvChannels = [
 		timetable: [
 			{
 				time: '17:30',
-				name: 'Ивановы Ивановы',
-				desc: 'Сериал, 60 мин, 0+',
+				name: 'Новости кино',
+				desc: 'Новости, 60 мин, 0+',
 				active: false,
 				will: false,
 			},
 			{
 				time: '18:30',
-				name: 'Новости кино',
-				desc: 'Новости, 60 мин, 12+',
+				name: 'Ивановы Ивановы',
+				desc: 'Сериалы, 60 мин, 12+',
 				active: true,
 				will: false,
 			},

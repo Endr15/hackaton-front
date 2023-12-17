@@ -17,6 +17,7 @@
     "axios": "^1.6.2",
     "classnames": "^2.3.2",
     "framer-motion": "^10.16.16",
+    "lodash": "^4.17.21",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18",
@@ -29,6 +30,7 @@
     "swiper": "^11.0.5"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.202",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

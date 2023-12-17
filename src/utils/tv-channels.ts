@@ -4,7 +4,7 @@ export const TvChannels = [
 		name: 'Тнт',
 		currentProgram: 'Импровизация',
 		currentProgramId: 'improvization',
-		programDesc: 'Джимми Фэллон ведет "Вечернее шоу" и берет интервью у знаменитостей, играет с ними в игры и приглашает гостей выступить в мюзикле или комедии.',
+		programDesc: 'Импровизация - лучшее шоу современности',
 		rating: 4.8,
 		commentsCount: 152,
 		timetable: [

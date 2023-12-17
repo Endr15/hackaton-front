@@ -6,10 +6,7 @@ import Link from 'next/link'
 import { linkItems } from '@/utils/links'
 
 export default function Footer() {
-
 	const currentPath = usePathname().split('/')[1]
-	console.log(currentPath)
-
 
 	return (
 		<footer className={styles.footer}>

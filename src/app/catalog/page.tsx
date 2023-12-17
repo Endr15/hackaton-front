@@ -8,88 +8,136 @@ import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from '@nextui-o
 import { Button } from '@nextui-org/button'
 import Link from 'next/link'
 import { TvChannels } from '@/utils/tv-channels'
+import { Fragment, useState } from 'react'
+import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@nextui-org/modal'
+import { Checkbox, CheckboxGroup } from '@nextui-org/checkbox'
 
 export default function Catalog() {
+	const { isOpen, onOpen, onOpenChange } = useDisclosure()
+
+	const [selected, setSelected] = useState('tv')
+	const isWithMask = selected == 'mask'
+
 	return (
-		<section className={styles.catalog}>
-			<Input type='search' label='Я ищу...' />
+		<Fragment>
 
-			<div className={styles.tabsList}>
-				<Tabs radius='full' className={styles.tabs}>
-					<Tab className={styles.tab} key='tv' title='Все'>
-						<ul className={styles.tabList}>
-							{TvChannels.map(channel => (
-								<li key={channel.id}>
-									<div className={styles.tabListItem}>
-										<Link href={`/catalog/tv/${channel.id}`}><img width={80} height={80} alt='programm'
-																																	src={`/tv/${channel.id}.png`} /></Link>
-										<div className={styles.cardContent}>
-											<Link href={`/catalog/tv/${channel.id}`}>
-												<p>{channel.name}</p>
-												<h4>{channel.currentProgram}</h4>
-												<p>18:00 - 19:00</p>
-											</Link>
+			<nav className={styles.navbar}>
+				<h1>Каналы</h1>
+				<Button variant='light' onPress={onOpen}><Image width={25} height={25} src='/ui/filter.svg'
+																												alt='filter' /></Button>
+				<Modal isOpen={isOpen} onOpenChange={onOpenChange} placement='center'>
+					<ModalContent>
+						{(onClose) => (
+							<>
+								<ModalHeader className='flex flex-col gap-1'>Фильтры</ModalHeader>
+								<ModalBody>
+									<CheckboxGroup
+										label='Выберите маску'
+										defaultValue={['buenos-aires', 'london']}
+									>
+										<Checkbox value='news'>Новости</Checkbox>
+										<Checkbox value='serials'>Сериалы</Checkbox>
+										<Checkbox value='fun'>Развлекательно</Checkbox>
+										<Checkbox value='science'>Начное</Checkbox>
+									</CheckboxGroup>
+								</ModalBody>
+								<ModalFooter>
+									<Button color='danger' variant='light' onPress={onClose}>
+										Закрыть
+									</Button>
+									<Button color='primary' onPress={onClose}>
+										Применить
+									</Button>
+								</ModalFooter>
+							</>
+						)}
+					</ModalContent>
+				</Modal>
+			</nav>
 
-											<Dropdown>
-												<DropdownTrigger>
-													<button>
-														<Image width={20} height={20} src='/ui/more.svg' alt='more' />
-													</button>
-												</DropdownTrigger>
-												<DropdownMenu aria-label='Static Actions'>
-													<DropdownItem key='new'>Добавить в избранное</DropdownItem>
-													<DropdownItem key='copy'>Добавить маску</DropdownItem>
-												</DropdownMenu>
-											</Dropdown>
+			<section className={styles.catalog}>
+				<Input type='search' label='Я ищу...' />
+
+				<div className={styles.tabsList}>
+					<Tabs radius='full'
+								className={styles.tabs}
+								selectedKey={selected}
+								onSelectionChange={(e: any) => setSelected(e)}>
+						<Tab className={styles.tab} key='tv' title='Все'>
+							<ul className={styles.tabList}>
+								{TvChannels.map(channel => (
+									<li key={channel.id}>
+										<div className={styles.tabListItem}>
+											<Link href={`/catalog/tv/${channel.id}`}><img width={80} height={80} alt='programm'
+																																		src={`/tv/${channel.id}.png`} /></Link>
+											<div className={styles.cardContent}>
+												<Link href={`/catalog/tv/${channel.id}`}>
+													<p>{channel.name}</p>
+													<h4>{channel.currentProgram}</h4>
+													<p>18:00 - 19:00</p>
+												</Link>
+
+												<Dropdown>
+													<DropdownTrigger>
+														<button>
+															<Image width={20} height={20} src='/ui/more.svg' alt='more' />
+														</button>
+													</DropdownTrigger>
+													<DropdownMenu aria-label='Static Actions'>
+														<DropdownItem key='new'>Добавить в избранное</DropdownItem>
+														<DropdownItem key='copy'>Добавить маску</DropdownItem>
+													</DropdownMenu>
+												</Dropdown>
+											</div>
 										</div>
-									</div>
-								</li>
-							))}
-						</ul>
-					</Tab>
-					<Tab className={styles.tab} key='programm' title='С масками'>
-						<ul className={styles.tabList}>
+									</li>
+								))}
+							</ul>
+						</Tab>
+						<Tab className={styles.tab} key='mask' title='С масками'>
+							<ul className={styles.tabList}>
 
-							{TvChannels.map(channel => (
-								<li key={channel.id}>
-									<div className={styles.tabListItem}>
-										<Link href={`/catalog/tv/${channel.id}`}>
-											<img width={80} height={80} alt='programm' src={`/tv/${channel.id}.png`} />
-										</Link>
-										<div className={styles.cardContent}>
+								{TvChannels.map(channel => (
+									<li key={channel.id}>
+										<div className={styles.tabListItem}>
 											<Link href={`/catalog/tv/${channel.id}`}>
-												{/*TODO: mali right linking and add modal to add new tag*/}
-												<h4>{channel.name}</h4>
-												{channel.tags.map(item => (
-													<Chip size='sm' key={item.name}>{item.name}</Chip>
-												))}
-												<Chip>+</Chip>
+												<img width={80} height={80} alt='programm' src={`/tv/${channel.id}.png`} />
 											</Link>
+											<div className={styles.cardContent}>
+												<Link href={`/catalog/tv/${channel.id}`}>
+													{/*TODO: mali right linking and add modal to add new tag*/}
+													<h4>{channel.name}</h4>
+													{channel.tags.map(item => (
+														<Chip size='sm' key={item.name}>{item.name}</Chip>
+													))}
+													<Chip>+</Chip>
+												</Link>
 
-											<Dropdown className={styles.dropDown}>
-												<DropdownTrigger>
-													<button className={styles.dropDownButton}>
-														<Image width={20} height={20} src='/ui/more.svg' alt='more' />
-													</button>
-												</DropdownTrigger>
-												<DropdownMenu aria-label='Static Actions'>
-													<DropdownItem key='new'>Добавить в избранное</DropdownItem>
-													<DropdownItem key='copy'>Добавить маску</DropdownItem>
-												</DropdownMenu>
-											</Dropdown>
+												<Dropdown className={styles.dropDown}>
+													<DropdownTrigger>
+														<button className={styles.dropDownButton}>
+															<Image width={20} height={20} src='/ui/more.svg' alt='more' />
+														</button>
+													</DropdownTrigger>
+													<DropdownMenu aria-label='Static Actions'>
+														<DropdownItem key='new'>Добавить в избранное</DropdownItem>
+														<DropdownItem key='copy'>Добавить маску</DropdownItem>
+													</DropdownMenu>
+												</Dropdown>
+											</div>
 										</div>
-									</div>
-								</li>
-							))}
-						</ul>
+									</li>
+								))}
+							</ul>
 
-						<div className={styles.button}>
-							<Button>Показать подборку</Button>
-						</div>
+							<div className={styles.button}>
+								<Button>Показать подборку</Button>
+							</div>
 
-					</Tab>
-				</Tabs>
-			</div>
-		</section>
+						</Tab>
+					</Tabs>
+				</div>
+			</section>
+		</Fragment>
 	)
 }

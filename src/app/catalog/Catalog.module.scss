@@ -1,3 +1,11 @@
+.navbar {
+  @apply flex mt-5 justify-center items-center;
+
+  button {
+    @apply absolute right-5;
+  }
+}
+
 .catalog {
   @apply m-5;
 }

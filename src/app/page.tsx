@@ -114,8 +114,10 @@ export default function Home() {
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
-									<Chip>Новости</Chip>
-									<Chip>Шоу</Chip>
+									<div>
+										<Chip>Шоу</Chip>
+										<Chip>Новости</Chip>
+									</div>
 								</div>
 							</li>
 
@@ -124,8 +126,11 @@ export default function Home() {
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
-									<Chip>Комедия</Chip>
-									<Chip>Наука</Chip>
+									<div>
+										<Chip>Комедия</Chip>
+										<Chip>Наука</Chip>
+									</div>
+
 								</div>
 							</li>
 
@@ -134,7 +139,9 @@ export default function Home() {
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
-									<Chip>Сериалы</Chip>
+									<div>
+										<Chip>Сериалы</Chip>
+									</div>
 								</div>
 							</li>
 
@@ -147,6 +154,7 @@ export default function Home() {
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
+									<div>18:00 - 19:00</div>
 								</div>
 							</li>
 
@@ -155,6 +163,7 @@ export default function Home() {
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
+									<div>18:00 - 19:00</div>
 								</div>
 							</li>
 
@@ -163,6 +172,7 @@ export default function Home() {
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
+									<div>18:00 - 19:00</div>
 								</div>
 							</li>
 

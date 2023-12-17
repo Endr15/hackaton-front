@@ -20,6 +20,17 @@ export default function Catalog() {
 
 	const [filter, setFilter] = useState<Array<string>>([])
 
+	const [input, setInput] = useState<string>('')
+
+	const searchArray = TvChannels.filter(channel => channel.name.toLowerCase().includes(input.toLowerCase()))
+
+	const sortArray = TvChannels.filter(item => item.tags.map(tag => {
+		if (filter.find(el => el == tag) != undefined) return true
+	}).find(i => true))
+
+	const [toogle, setToogle] = useState<boolean>(false)
+
+	const array = !toogle ? TvChannels : sortArray
 	return (
 		<Fragment>
 
@@ -39,12 +50,12 @@ export default function Catalog() {
 											value={filter}
 											onValueChange={(e: any) => setFilter(e)}
 										>
-											<Checkbox value='comedy'>Комедия</Checkbox>
-											<Checkbox value='serials'>Сериалы</Checkbox>
-											<Checkbox value='news'>Новости</Checkbox>
-											<Checkbox value='science'>Научное</Checkbox>
-											<Checkbox value='show'>Шоу</Checkbox>
-											<Checkbox value='dragons'>Драконы</Checkbox>
+											<Checkbox value='комедия'>Комедия</Checkbox>
+											<Checkbox value='сериалы'>Сериалы</Checkbox>
+											<Checkbox value='новости'>Новости</Checkbox>
+											<Checkbox value='научное'>Научное</Checkbox>
+											<Checkbox value='шоу'>Шоу</Checkbox>
+											<Checkbox value='драконы'>Драконы</Checkbox>
 										</CheckboxGroup>
 									</ModalBody>
 									<ModalFooter>
@@ -86,7 +97,7 @@ export default function Catalog() {
 			</nav>
 
 			<section className={styles.catalog}>
-				<Input type='search' label='Я ищу...' />
+				<Input type='search' label='Я ищу...' value={input} onValueChange={value => setInput(value)} />
 
 				<div className={styles.tabsList}>
 					<Tabs radius='full'
@@ -95,7 +106,7 @@ export default function Catalog() {
 								onSelectionChange={(e: any) => setSelected(e)}>
 						<Tab className={styles.tab} key='tv' title='Все'>
 							<ul className={styles.tabList}>
-								{TvChannels.map(channel => (
+								{searchArray.map(channel => (
 									<li key={channel.id}>
 										<div className={styles.tabListItem}>
 											<Link href={`/catalog/tv/${channel.id}`}><img width={80} height={80} alt='programm'
@@ -127,7 +138,7 @@ export default function Catalog() {
 						<Tab className={styles.tab} key='mask' title='С масками'>
 							<ul className={styles.tabList}>
 
-								{TvChannels.map(channel => (
+								{array.map(channel => (
 									<li key={channel.id}>
 										<div className={styles.tabListItem}>
 											<Link href={`/catalog/program/${channel.currentProgramId}`}>
@@ -137,7 +148,7 @@ export default function Catalog() {
 												<div>
 													<h4>{channel.name}</h4>
 													{channel.tags.map(item => (
-														<Chip size='sm' key={item.name}>{item.name}</Chip>
+														<Chip size='sm' key={item}>{item}</Chip>
 													))}
 													<Chip>+</Chip>
 												</div>
@@ -160,7 +171,7 @@ export default function Catalog() {
 							</ul>
 
 							<div className={styles.button}>
-								<Button>Показать подборку</Button>
+								<Button onPress={() => setToogle(!toogle)}>Показать подборку</Button>
 							</div>
 
 						</Tab>

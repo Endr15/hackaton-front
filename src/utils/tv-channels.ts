@@ -45,8 +45,7 @@ export const TvChannels = [
 			},
 		],
 		tags: [
-			{ id: 'comedy', name: 'комедия' },
-			{ id: 'serials', name: 'сериалы' },
+			'комедия', 'сериалы',
 		],
 	},
 
@@ -96,8 +95,7 @@ export const TvChannels = [
 			},
 		],
 		tags: [
-			{ id: 'news', name: 'новости' },
-			{ id: 'science', name: 'научное' },
+			'новости', 'научное',
 		],
 	},
 
@@ -147,8 +145,7 @@ export const TvChannels = [
 			},
 		],
 		tags: [
-			{ id: 'comedy', name: 'комедия' },
-			{ id: 'show', name: 'шоу' },
+			'комедия', 'шоу',
 		],
 	},
 
@@ -191,8 +188,7 @@ export const TvChannels = [
 			},
 		],
 		tags: [
-			{ id: 'dragons', name: 'драконы' },
-			{ id: 'serials', name: 'сериалы' },
+			'драконы', 'сериалы',
 		],
 	},
 ]

@@ -6,17 +6,16 @@ import { Button } from '@nextui-org/button'
 import { Divider } from '@nextui-org/divider'
 import { Tab, Tabs } from '@nextui-org/tabs'
 import Link from 'next/link'
-import { TvChannels } from '@/utils/tv-channels'
+import { Programs } from '@/utils/programs'
 import _ from 'lodash'
 
 export default function Page({ params }: { params: { index: string } }) {
 	const router = useRouter()
 
-	const channelArray = TvChannels.map(item => {
-		if (item.currentProgramId == params.index) return item
+	const programsArray = Programs.map(item => {
+		if (item.id == params.index) return item
 	})
-	const [program] = _.filter(channelArray, _.some)
-	console.log(program)
+	const [program] = _.filter(programsArray, _.some)
 
 	return <section className={styles.programSection}>
 		<img width={500} height={220} src='/tv/bg.png' alt='bg' className={styles.poster} />
@@ -28,13 +27,13 @@ export default function Page({ params }: { params: { index: string } }) {
 		</div>
 
 		<div className={styles.content}>
-			<h2>{program?.currentProgram}</h2>
-			<p>{program?.timetable[0].desc}</p>
+			<h2>{program?.name}</h2>
+			<p>{program?.subName}</p>
 		</div>
-		<div className={styles.description}>{program?.programDesc}</div>
+		<div className={styles.description}>{program?.description}</div>
 
 		<div className={styles.button}>
-			<Button onPress={() => router.push('/catalog/program/1/1')}>Смотреть</Button>
+			<Button onPress={() => router.push(`/catalog/program/${program?.id}/1`)}>Смотреть</Button>
 		</div>
 
 		<Divider />
@@ -42,28 +41,18 @@ export default function Page({ params }: { params: { index: string } }) {
 		<div className={styles.seasons}>
 			<h2>Сезоны и серии</h2>
 
-			<Tabs aria-label='Options' radius='full'>
-				<Tab key='photos' title='1 сезон'>
-					<Link href={`/catalog/program/${program?.currentProgramId}/1`} className={styles.series}>
-						<img width={200} height={120} src='/poster.png' alt='poster' />
-						<h3>Заголовок</h3>
-						<p>Description</p>
-					</Link>
-				</Tab>
-				<Tab key='music' title='2 сезон'>
-					<Link href='/catalog/program/1/1' className={styles.series}>
-						<img width={200} height={120} src='/poster.png' alt='poster' />
-						<h3>Заголовок 1</h3>
-						<p>Description</p>
-					</Link>
-				</Tab>
-				<Tab key='videos' title='3 сезон'>
-					<Link href='/catalog/program/1/1' className={styles.series}>
-						<img width={200} height={120} src='/poster.png' alt='poster' />
-						<h3>Заголовок 2</h3>
-						<p>Description</p>
-					</Link>
-				</Tab>
+			<Tabs aria-label='Seasons' radius='full'>
+				{program?.season.map((item, index) => (
+					<Tab key={index} title={`${index + 1} сезон`}>
+						{item.map(item => (
+							<Link key={item.id} href={`/catalog/program/${program?.id}/1`} className={styles.series}>
+								<img width={200} height={120} src={item.srcImage} alt='poster' />
+								<h3>{item.name}</h3>
+								<p>{item.desc}</p>
+							</Link>
+						))}
+					</Tab>
+				))}
 			</Tabs>
 		</div>
 
@@ -76,49 +65,27 @@ export default function Page({ params }: { params: { index: string } }) {
 			</div>
 
 			<ul className={styles.commentsList}>
-				<li className={styles.commentItem}>
-					<div className={styles.title}>
-						<img width={64} height={64} src='/ui/avatar-default.png' alt='avatar' />
+				{program?.comments.map(item => (
+					<li key={item.userName} className={styles.commentItem}>
+						<div className={styles.title}>
+							<img width={64} height={64} src={item.srcImage} alt='avatar' />
 
-						<div>
-							<h4>Имя Фамилия</h4>
-							<p>17.02.2022</p>
-							<div className={styles.rate}>
-								<Image width={15} height={15} src='/ui/rate.svg' alt='rate' />
-								<Image width={15} height={15} src='/ui/rate.svg' alt='rate' />
-								<Image width={15} height={15} src='/ui/rate.svg' alt='rate' />
-								<Image width={15} height={15} src='/ui/rate.svg' alt='rate' />
-								<Image width={15} height={15} src='/ui/rate.svg' alt='rate' />
+							<div>
+								<h4>{item.userName}</h4>
+								<p>{item.date}</p>
+								<div className={styles.rate}>
+									<Image width={15} height={15} src='/ui/rate.svg' alt='rate' />
+									<Image width={15} height={15} src='/ui/rate.svg' alt='rate' />
+									<Image width={15} height={15} src='/ui/rate.svg' alt='rate' />
+									<Image width={15} height={15} src='/ui/rate.svg' alt='rate' />
+									<Image width={15} height={15} src='/ui/rate.svg' alt='rate' />
+								</div>
 							</div>
 						</div>
-					</div>
-					<p className={styles.commentDescription}>Обожаю пацанок. 1 сезон это нечто! Скорее бы 3 серию, а то я устал
-						ждать.
-						Смотрел бы целыми днями напролет, но жена не разрешает:(</p>
-					<div></div>
-				</li>
-
-				<li className={styles.commentItem}>
-					<div className={styles.title}>
-						<img width={64} height={64} src='/ui/avatar-default.png' alt='avatar' />
-
-						<div>
-							<h4>Имя Фамилия</h4>
-							<p>17.02.2022</p>
-							<div className={styles.rate}>
-								<Image width={15} height={15} src='/ui/rate.svg' alt='rate' />
-								<Image width={15} height={15} src='/ui/rate.svg' alt='rate' />
-								<Image width={15} height={15} src='/ui/rate.svg' alt='rate' />
-								<Image width={15} height={15} src='/ui/rate.svg' alt='rate' />
-								<Image width={15} height={15} src='/ui/rate.svg' alt='rate' />
-							</div>
-						</div>
-					</div>
-					<p className={styles.commentDescription}>Обожаю пацанок. 1 сезон это нечто! Скорее бы 3 серию, а то я устал
-						ждать.
-						Смотрел бы целыми днями напролет, но жена не разрешает:(</p>
-					<div></div>
-				</li>
+						<p className={styles.commentDescription}>{item.description}</p>
+						<div></div>
+					</li>
+				))}
 			</ul>
 		</div>
 

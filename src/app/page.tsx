@@ -9,8 +9,11 @@ import { Divider } from '@nextui-org/divider'
 import { Button } from '@nextui-org/button'
 import { Tab, Tabs } from '@nextui-org/tabs'
 import { Chip } from '@nextui-org/chip'
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
+	const router = useRouter()
+
 	return (
 		<section>
 			<div className={styles.slider}>
@@ -31,7 +34,7 @@ export default function Home() {
 				</Swiper>
 			</div>
 			<div className={styles.buttonWrapper}>
-				<Button className={styles.button} radius='lg'
+				<Button onPress={() => router.push('/compilation')} className={styles.button} radius='lg'
 								startContent={<Image width={15} height={15} src='/ui/play.svg' alt='play' />}>Подобрать
 					передачу</Button>
 			</div>

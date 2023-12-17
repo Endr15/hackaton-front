@@ -2,11 +2,14 @@
 import styles from './Compilation.module.scss'
 
 import 'swiper/scss'
+import 'swiper/scss/pagination'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import React from 'react'
 import Image from 'next/image'
 import { Divider } from '@nextui-org/divider'
 import Link from 'next/link'
+import { Pagination } from 'swiper/modules'
+import './styles.scss'
 
 export default function Compilation() {
 
@@ -42,7 +45,17 @@ export default function Compilation() {
 			<div className={styles.slider}>
 				<h2 className={styles.title}>Эмоция</h2>
 				<p className={styles.desc}>Выберите интересующие вас эмоции</p>
-				<Swiper>
+				<Swiper modules={[Pagination]} pagination={{ clickable: true }}>
+					<SwiperSlide className={styles.emotionsWrapper}>
+						{listEmotions.map(item => (
+							<div className={styles.emotionItem} key={item.name}>
+								<div><Image width={80} height={80} src={item.iconSrc} alt={item.name} /></div>
+
+								<span>{item.name}</span>
+							</div>
+						))}
+					</SwiperSlide>
+
 					<SwiperSlide className={styles.emotionsWrapper}>
 						{listEmotions.map(item => (
 							<div className={styles.emotionItem} key={item.name}>

@@ -18,6 +18,8 @@ export default function Catalog() {
 	const [selected, setSelected] = useState('tv')
 	const isWithMask = selected == 'mask'
 
+	const [filter, setFilter] = useState<Array<string>>([])
+
 	return (
 		<Fragment>
 
@@ -25,7 +27,7 @@ export default function Catalog() {
 				<h1>Каналы</h1>
 				<Button variant='light' onPress={onOpen}><Image width={25} height={25} src='/ui/filter.svg'
 																												alt='filter' /></Button>
-				{selected == 'mask' ? (
+				{isWithMask ? (
 					<Modal isOpen={isOpen} onOpenChange={onOpenChange} placement='center'>
 						<ModalContent>
 							{(onClose) => (
@@ -34,17 +36,22 @@ export default function Catalog() {
 									<ModalBody>
 										<CheckboxGroup
 											label='Выберите маску'
-											defaultValue={['buenos-aires', 'london']}
+											value={filter}
+											onValueChange={(e: any) => setFilter(e)}
 										>
-											<Checkbox value='news'>Новости</Checkbox>
+											<Checkbox value='comedy'>Комедия</Checkbox>
 											<Checkbox value='serials'>Сериалы</Checkbox>
-											<Checkbox value='fun'>Развлекательно</Checkbox>
-											<Checkbox value='science'>Начное</Checkbox>
+											<Checkbox value='news'>Новости</Checkbox>
+											<Checkbox value='science'>Научное</Checkbox>
+											<Checkbox value='show'>Шоу</Checkbox>
+											<Checkbox value='dragons'>Драконы</Checkbox>
 										</CheckboxGroup>
 									</ModalBody>
 									<ModalFooter>
-										<Button color='danger' variant='light' onPress={onClose}>
-											Закрыть
+										<Button color='danger' variant='light' onPress={() => {
+											setFilter([])
+										}}>
+											Очистить
 										</Button>
 										<Button color='primary' onPress={onClose}>
 											Применить

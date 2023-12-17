@@ -43,7 +43,7 @@ export default function Catalog() {
 				<h3>Мое</h3>
 
 				<ul>
-					<li>Достижение</li>
+					<li>Достижения <div className={styles.noti}>2</div></li>
 					<li>Избранное</li>
 					<li>История просмотров</li>
 				</ul>

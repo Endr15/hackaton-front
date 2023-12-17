@@ -45,23 +45,23 @@ export default function Home() {
 					<Swiper slidesPerView={2} spaceBetween={25}>
 						<SwiperSlide className={styles.forYouSlide}>
 							<Link href='#'>
-								<img width={200} height={120} src='/poster.png' alt='poster' />
-								<h3>Заголовок</h3>
-								<p>Description</p>
+								<img width={200} height={120} src='/program/ivanov.jpg' alt='poster' />
+								<h3>Ивановы Ивановы</h3>
+								<p>Сериал от СТС</p>
 							</Link>
 						</SwiperSlide>
 						<SwiperSlide className={styles.forYouSlide}>
 							<Link href='#'>
-								<img width={200} height={120} src='/poster.png' alt='poster' />
-								<h3>Заголовок</h3>
-								<p>Description</p>
+								<img width={200} height={120} src='/program/news.jpg' alt='poster' />
+								<h3>Новости</h3>
+								<p>Новости на 1 канале</p>
 							</Link>
 						</SwiperSlide>
 						<SwiperSlide className={styles.forYouSlide}>
 							<Link href='#'>
-								<img width={200} height={120} src='/poster.png' alt='poster' />
-								<h3>Заголовок</h3>
-								<p>Description</p>
+								<img width={200} height={120} src='/program/gameOfTrons.jpg' alt='poster' />
+								<h3>Игра престолов</h3>
+								<p>Сериал от HBO</p>
 							</Link>
 						</SwiperSlide>
 					</Swiper>
@@ -110,38 +110,27 @@ export default function Home() {
 					<Tab className={styles.tab} key='tv' title='Каналы'>
 						<ul className={styles.tabList}>
 							<li>
-								<img width={80} height={80} alt='programm' src='/program/improvization.png' />
+								<img width={80} height={80} alt='programm' src='/tv/ctc.png' />
 								<div className={styles.cardContent}>
-									<p>Канал</p>
-									<h4>Название передачи</h4>
-									<div>
-										<Chip>Шоу</Chip>
-										<Chip>Новости</Chip>
-									</div>
-								</div>
-							</li>
-
-							<li>
-								<img width={80} height={80} alt='programm' src='/program/improvization.png' />
-								<div className={styles.cardContent}>
-									<p>Канал</p>
-									<h4>Название передачи</h4>
-									<div>
-										<Chip>Комедия</Chip>
-										<Chip>Наука</Chip>
-									</div>
-
-								</div>
-							</li>
-
-							<li>
-								<img width={80} height={80} alt='programm' src='/program/improvization.png' />
-								<div className={styles.cardContent}>
-									<p>Канал</p>
-									<h4>Название передачи</h4>
+									<p>СТС</p>
+									<h4>Ивановы Ивановы</h4>
 									<div>
 										<Chip>Сериалы</Chip>
+										<Chip>Шоу</Chip>
 									</div>
+								</div>
+							</li>
+
+							<li>
+								<img width={80} height={80} alt='programm' src='/tv/hbo.png' />
+								<div className={styles.cardContent}>
+									<p>HBO</p>
+									<h4>Игра престолов</h4>
+									<div>
+										<Chip>Драконы</Chip>
+										<Chip>Сериалы</Chip>
+									</div>
+
 								</div>
 							</li>
 
@@ -150,28 +139,19 @@ export default function Home() {
 					<Tab className={styles.tab} key='programm' title='Тв-программы'>
 						<ul className={styles.tabList}>
 							<li>
-								<img width={80} height={80} alt='programm' src='/program/improvization.png' />
+								<img width={80} height={80} alt='programm' src='/program/news.jpg' />
 								<div className={styles.cardContent}>
-									<p>Канал</p>
-									<h4>Название передачи</h4>
+									<p>1 канал</p>
+									<h4>Новости</h4>
 									<div>18:00 - 19:00</div>
 								</div>
 							</li>
 
 							<li>
-								<img width={80} height={80} alt='programm' src='/program/improvization.png' />
+								<img width={80} height={80} alt='programm' src='/program/comedy.jpg' />
 								<div className={styles.cardContent}>
-									<p>Канал</p>
-									<h4>Название передачи</h4>
-									<div>18:00 - 19:00</div>
-								</div>
-							</li>
-
-							<li>
-								<img width={80} height={80} alt='programm' src='/program/improvization.png' />
-								<div className={styles.cardContent}>
-									<p>Канал</p>
-									<h4>Название передачи</h4>
+									<p>ТНТ</p>
+									<h4>Comedy Club</h4>
 									<div>18:00 - 19:00</div>
 								</div>
 							</li>

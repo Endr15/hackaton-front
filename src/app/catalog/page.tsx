@@ -101,11 +101,11 @@ export default function Catalog() {
 											<Link href={`/catalog/tv/${channel.id}`}><img width={80} height={80} alt='programm'
 																																		src={`/tv/${channel.id}.png`} /></Link>
 											<div className={styles.cardContent}>
-												<Link href={`/catalog/tv/${channel.id}`}>
+												<div>
 													<p>{channel.name}</p>
 													<h4>{channel.currentProgram}</h4>
 													<p>18:00 - 19:00</p>
-												</Link>
+												</div>
 
 												<Dropdown>
 													<DropdownTrigger>
@@ -134,13 +134,13 @@ export default function Catalog() {
 												<img width={80} height={80} alt='programm' src={`/tv/${channel.id}.png`} />
 											</Link>
 											<div className={styles.cardContent}>
-												<Link href={`/catalog/program/${channel.currentProgramId}`}>
+												<div>
 													<h4>{channel.name}</h4>
 													{channel.tags.map(item => (
 														<Chip size='sm' key={item.name}>{item.name}</Chip>
 													))}
 													<Chip>+</Chip>
-												</Link>
+												</div>
 
 												<Dropdown className={styles.dropDown}>
 													<DropdownTrigger>

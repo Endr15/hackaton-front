@@ -79,6 +79,7 @@
 
     .cardContent {
       @apply bg-bg-2 ml-2.5 rounded-lg p-2;
+      min-width: 275px;
 
       p {
         @apply font-montserrat font-medium text-sm text-left;

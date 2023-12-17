@@ -1,7 +1,7 @@
 export const TvChannels = [
 	{
 		id: 'tnt',
-		name: 'Тнт',
+		name: 'ТНТ',
 		currentProgram: 'Импровизация',
 		currentProgramId: 'improvization',
 		programDesc: 'Импровизация - лучшее шоу современности',

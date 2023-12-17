@@ -34,7 +34,7 @@ export default function Home() {
 				</Swiper>
 			</div>
 			<div className={styles.buttonWrapper}>
-				<Button onPress={() => router.push('/compilation')} className={styles.button} radius='lg'
+				<Button onPress={() => router.replace('/compilation')} className={styles.button} radius='lg'
 								startContent={<Image width={15} height={15} src='/ui/play.svg' alt='play' />}>Подобрать
 					передачу</Button>
 			</div>
@@ -114,10 +114,8 @@ export default function Home() {
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
-									<Chip>Игра</Chip>
-									<Chip>Игра</Chip>
-									<Chip>Игра</Chip>
-									<Chip>Игра</Chip>
+									<Chip>Новости</Chip>
+									<Chip>Шоу</Chip>
 								</div>
 							</li>
 
@@ -126,10 +124,8 @@ export default function Home() {
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
-									<Chip>Игра</Chip>
-									<Chip>Игра</Chip>
-									<Chip>Игра</Chip>
-									<Chip>Игра</Chip>
+									<Chip>Комедия</Chip>
+									<Chip>Наука</Chip>
 								</div>
 							</li>
 
@@ -138,10 +134,7 @@ export default function Home() {
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
-									<Chip>Игра</Chip>
-									<Chip>Игра</Chip>
-									<Chip>Игра</Chip>
-									<Chip>Игра</Chip>
+									<Chip>Сериалы</Chip>
 								</div>
 							</li>
 
@@ -154,10 +147,6 @@ export default function Home() {
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
-									<Chip>Игра</Chip>
-									<Chip>Игра</Chip>
-									<Chip>Игра</Chip>
-									<Chip>Игра</Chip>
 								</div>
 							</li>
 
@@ -166,10 +155,6 @@ export default function Home() {
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
-									<Chip>Игра</Chip>
-									<Chip>Игра</Chip>
-									<Chip>Игра</Chip>
-									<Chip>Игра</Chip>
 								</div>
 							</li>
 
@@ -178,10 +163,6 @@ export default function Home() {
 								<div className={styles.cardContent}>
 									<p>Канал</p>
 									<h4>Название передачи</h4>
-									<Chip>Игра</Chip>
-									<Chip>Игра</Chip>
-									<Chip>Игра</Chip>
-									<Chip>Игра</Chip>
 								</div>
 							</li>
 

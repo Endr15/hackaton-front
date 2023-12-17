@@ -95,13 +95,16 @@ export default function Page({ params }: { params: { index: string } }) {
 			<h2>Похожее</h2>
 
 			<ul className={styles.recommendList}>
-				<li>
-					<img width={80} height={80} alt='programm' src='/program/improvization.png' />
-					<div className={styles.cardContent}>
-						<p>Канал</p>
-						<h4>Название передачи</h4>
-					</div>
-				</li>
+				{program?.similar.map(item => (
+					<li key={item.name}>
+						<img width={80} height={80} alt='programm' src={item.srcImage} />
+						<div className={styles.cardContent}>
+							<p>{item.channel}</p>
+							<h4>{item.name}</h4>
+							<p>{item.time}</p>
+						</div>
+					</li>
+				))}
 			</ul>
 		</div>
 

@@ -85,8 +85,8 @@
   @apply bg-bg-2 rounded-lg pb-2 mb-2.5;
 }
 
-.description {
-  @apply px-2;
+.commentDescription {
+  @apply px-2 font-graphik font-medium text-base text-white;
   margin: 0 !important;
 }
 

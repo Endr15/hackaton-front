@@ -6,12 +6,13 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { TvChannels } from '@/utils/tv-channels'
 import _ from 'lodash'
+import { Button } from '@nextui-org/button'
 
 export default function Page({ params }: { params: { slug: string } }) {
 	const router = useRouter()
 
 	const [isOpen, setIsOpen] = useState<boolean>(false)
-	
+
 	const channelArray = TvChannels.map(item => {
 		if (item.id == params.slug) return item
 	})
@@ -42,20 +43,22 @@ export default function Page({ params }: { params: { slug: string } }) {
 					ними в игры и приглашает гостей выступить в мюзикле или комедии.
 				</div>
 				<div className={styles.rating}>
-					<div><Image width={20} height={20} src='/ui/rate.svg' alt='rate' /><span>4,4</span></div>
-					<p>152 оценок</p>
+					<div><Image width={20} height={20} src='/ui/rate.svg' alt='rate' /><span>{channel?.rating}</span></div>
+					<p>{channel?.commentsCount} оценок</p>
 				</div>
 			</>
 		) : (<div></div>)}
 
 		<ul className={styles.programList}>
 			{channel?.timetable.map(item => (
-				<li key={item.name}>
+				<li key={item.name} className={item.active ? styles.active : undefined}>
 					<span>{item.time}</span>
 					<div>
 						<h3>{item.name}</h3>
 						<p>{item.desc}</p>
 					</div>
+					{item.will ? (
+						<Button variant='light'><Image width={20} height={20} src='/ui/alert.svg' alt='alert' /></Button>) : <></>}
 				</li>
 			))}
 		</ul>

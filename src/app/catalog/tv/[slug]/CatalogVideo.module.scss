@@ -81,5 +81,13 @@
         @apply font-montserrat font-semibold text-sm;
       }
     }
+
+    button {
+      @apply absolute right-5;
+    }
   }
+}
+
+.active {
+  @apply bg-bg-2;
 }

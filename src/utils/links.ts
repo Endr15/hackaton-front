@@ -21,7 +21,7 @@ export const linkItems = [
 		rightIcon: '/ui/',
 	},
 	{
-		title: 'Аккаунт',
+		title: 'Профиль',
 		url: 'account',
 		imageSrc: '/ui/account.svg',
 		accentImageSrc: '/ui/account-accent.svg',

@@ -25,34 +25,57 @@ export default function Catalog() {
 				<h1>Каналы</h1>
 				<Button variant='light' onPress={onOpen}><Image width={25} height={25} src='/ui/filter.svg'
 																												alt='filter' /></Button>
-				<Modal isOpen={isOpen} onOpenChange={onOpenChange} placement='center'>
-					<ModalContent>
-						{(onClose) => (
-							<>
-								<ModalHeader className='flex flex-col gap-1'>Фильтры</ModalHeader>
-								<ModalBody>
-									<CheckboxGroup
-										label='Выберите маску'
-										defaultValue={['buenos-aires', 'london']}
-									>
-										<Checkbox value='news'>Новости</Checkbox>
-										<Checkbox value='serials'>Сериалы</Checkbox>
-										<Checkbox value='fun'>Развлекательно</Checkbox>
-										<Checkbox value='science'>Начное</Checkbox>
-									</CheckboxGroup>
-								</ModalBody>
-								<ModalFooter>
-									<Button color='danger' variant='light' onPress={onClose}>
-										Закрыть
-									</Button>
-									<Button color='primary' onPress={onClose}>
-										Применить
-									</Button>
-								</ModalFooter>
-							</>
-						)}
-					</ModalContent>
-				</Modal>
+				{selected == 'mask' ? (
+					<Modal isOpen={isOpen} onOpenChange={onOpenChange} placement='center'>
+						<ModalContent>
+							{(onClose) => (
+								<>
+									<ModalHeader className='flex flex-col gap-1'>Фильтры</ModalHeader>
+									<ModalBody>
+										<CheckboxGroup
+											label='Выберите маску'
+											defaultValue={['buenos-aires', 'london']}
+										>
+											<Checkbox value='news'>Новости</Checkbox>
+											<Checkbox value='serials'>Сериалы</Checkbox>
+											<Checkbox value='fun'>Развлекательно</Checkbox>
+											<Checkbox value='science'>Начное</Checkbox>
+										</CheckboxGroup>
+									</ModalBody>
+									<ModalFooter>
+										<Button color='danger' variant='light' onPress={onClose}>
+											Закрыть
+										</Button>
+										<Button color='primary' onPress={onClose}>
+											Применить
+										</Button>
+									</ModalFooter>
+								</>
+							)}
+						</ModalContent>
+					</Modal>
+				) : (
+					<Modal isOpen={isOpen} onOpenChange={onOpenChange} placement='center'>
+						<ModalContent>
+							{(onClose) => (
+								<>
+									<ModalHeader className='flex flex-col gap-1'>Фильтры</ModalHeader>
+									<ModalBody>
+										Filters
+									</ModalBody>
+									<ModalFooter>
+										<Button color='danger' variant='light' onPress={onClose}>
+											Закрыть
+										</Button>
+										<Button color='primary' onPress={onClose}>
+											Применить
+										</Button>
+									</ModalFooter>
+								</>
+							)}
+						</ModalContent>
+					</Modal>
+				)}
 			</nav>
 
 			<section className={styles.catalog}>
@@ -100,12 +123,11 @@ export default function Catalog() {
 								{TvChannels.map(channel => (
 									<li key={channel.id}>
 										<div className={styles.tabListItem}>
-											<Link href={`/catalog/tv/${channel.id}`}>
+											<Link href={`/catalog/program/${channel.currentProgramId}`}>
 												<img width={80} height={80} alt='programm' src={`/tv/${channel.id}.png`} />
 											</Link>
 											<div className={styles.cardContent}>
-												<Link href={`/catalog/tv/${channel.id}`}>
-													{/*TODO: mali right linking and add modal to add new tag*/}
+												<Link href={`/catalog/program/${channel.currentProgramId}`}>
 													<h4>{channel.name}</h4>
 													{channel.tags.map(item => (
 														<Chip size='sm' key={item.name}>{item.name}</Chip>

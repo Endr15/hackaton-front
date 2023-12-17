@@ -23,7 +23,7 @@ export default function Navbar() {
 		<Fragment>
 			{currentPath !== 'catalog' ? (<nav className={styles.navbar}>
 				<h1>{isProgram ? '' : title}</h1>
-				{currentPath == '' ? (<Link href='/search'>
+				{currentPath == '' ? (<Link href='/catalog'>
 					<Image width={24} height={24} src='/ui/search.svg' alt='search' />
 				</Link>) : (<div></div>)}
 			</nav>) : (<></>)}

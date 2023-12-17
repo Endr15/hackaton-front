@@ -1,0 +1,64 @@
+.top {
+  @apply m-5 flex flex-col items-center;
+
+  h2 {
+    @apply pt-2 font-montserrat font-semibold text-lg text-white;
+  }
+
+  p {
+    @apply font-montserrat font-medium text-sm;
+  }
+}
+
+.family {
+  @apply m-5;
+  h3 {
+    @apply flex font-graphik font-semibold text-xl text-white;
+
+    img {
+      @apply ml-2;
+    }
+  }
+
+  ul {
+    @apply flex mt-5;
+
+    li {
+      @apply pr-2;
+    }
+
+    .active {
+      @apply flex justify-center items-center border-1 border-line rounded p-5 px-7;
+    }
+  }
+}
+
+.subscribe {
+  @apply m-5;
+  h3 {
+    @apply flex font-graphik font-semibold text-xl text-white;
+  }
+
+  ul {
+    @apply flex mt-5;
+
+    li {
+      @apply pr-2;
+    }
+  }
+}
+
+.my {
+  @apply m-5;
+  h3 {
+    @apply flex font-graphik font-semibold text-xl text-white;
+  }
+
+  ul {
+    @apply mt-5;
+
+    li {
+      @apply bg-bg-2 p-4 mb-2 rounded-lg font-montserrat font-semibold text-lg text-white;
+    }
+  }
+}

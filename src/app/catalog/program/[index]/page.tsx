@@ -6,10 +6,17 @@ import { Button } from '@nextui-org/button'
 import { Divider } from '@nextui-org/divider'
 import { Tab, Tabs } from '@nextui-org/tabs'
 import Link from 'next/link'
+import { TvChannels } from '@/utils/tv-channels'
+import _ from 'lodash'
 
 export default function Page({ params }: { params: { index: string } }) {
-
 	const router = useRouter()
+
+	const channelArray = TvChannels.map(item => {
+		if (item.currentProgramId == params.index) return item
+	})
+	const [program] = _.filter(channelArray, _.some)
+	console.log(program)
 
 	return <section className={styles.programSection}>
 		<img width={500} height={220} src='/tv/bg.png' alt='bg' className={styles.poster} />
@@ -21,16 +28,13 @@ export default function Page({ params }: { params: { index: string } }) {
 		</div>
 
 		<div className={styles.content}>
-			<h2>Название программы</h2>
-			<p>description</p>
+			<h2>{program?.currentProgram}</h2>
+			<p>{program?.timetable[0].desc}</p>
 		</div>
-		<div className={styles.description}>Джимми Фэллон ведет Вечернее шоу и берет интервью у знаменитостей, играет
-			с
-			ними в игры и приглашает гостей выступить в мюзикле или комедии.
-		</div>
+		<div className={styles.description}>{program?.programDesc}</div>
 
 		<div className={styles.button}>
-			<Button>Смотреть</Button>
+			<Button onPress={() => router.push('/catalog/program/1/1')}>Смотреть</Button>
 		</div>
 
 		<Divider />
@@ -40,7 +44,7 @@ export default function Page({ params }: { params: { index: string } }) {
 
 			<Tabs aria-label='Options' radius='full'>
 				<Tab key='photos' title='1 сезон'>
-					<Link href='/catalog/program/1/1' className={styles.series}>
+					<Link href={`/catalog/program/${program?.currentProgramId}/1`} className={styles.series}>
 						<img width={200} height={120} src='/poster.png' alt='poster' />
 						<h3>Заголовок</h3>
 						<p>Description</p>
@@ -85,7 +89,8 @@ export default function Page({ params }: { params: { index: string } }) {
 							</div>
 						</div>
 					</div>
-					<p className={styles.description}>Обожаю пацанок. 1 сезон это нечто! Скорее бы 3 серию, а то я устал ждать.
+					<p className={styles.commentDescription}>Обожаю пацанок. 1 сезон это нечто! Скорее бы 3 серию, а то я устал
+						ждать.
 						Смотрел бы целыми днями напролет, но жена не разрешает:(</p>
 					<div></div>
 				</li>
@@ -106,7 +111,8 @@ export default function Page({ params }: { params: { index: string } }) {
 							</div>
 						</div>
 					</div>
-					<p className={styles.description}>Обожаю пацанок. 1 сезон это нечто! Скорее бы 3 серию, а то я устал ждать.
+					<p className={styles.commentDescription}>Обожаю пацанок. 1 сезон это нечто! Скорее бы 3 серию, а то я устал
+						ждать.
 						Смотрел бы целыми днями напролет, но жена не разрешает:(</p>
 					<div></div>
 				</li>

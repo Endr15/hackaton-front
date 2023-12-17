@@ -44,21 +44,21 @@ export default function Home() {
 				<div>
 					<Swiper slidesPerView={2} spaceBetween={25}>
 						<SwiperSlide className={styles.forYouSlide}>
-							<Link href='#'>
+							<Link href='/catalog/program/ivanov'>
 								<img width={200} height={120} src='/program/ivanov.jpg' alt='poster' />
 								<h3>Ивановы Ивановы</h3>
 								<p>Сериал от СТС</p>
 							</Link>
 						</SwiperSlide>
 						<SwiperSlide className={styles.forYouSlide}>
-							<Link href='#'>
+							<Link href='/catalog/program/news'>
 								<img width={200} height={120} src='/program/news.jpg' alt='poster' />
 								<h3>Новости</h3>
 								<p>Новости на 1 канале</p>
 							</Link>
 						</SwiperSlide>
 						<SwiperSlide className={styles.forYouSlide}>
-							<Link href='#'>
+							<Link href='/catalog/program/gameOfTrons'>
 								<img width={200} height={120} src='/program/gameOfTrons.jpg' alt='poster' />
 								<h3>Игра престолов</h3>
 								<p>Сериал от HBO</p>

@@ -51,16 +51,16 @@ export default function Page({ params }: { params: { index: string } }) {
 					</Link>
 				</Tab>
 				<Tab key='music' title='2 сезон'>
-					<Link href='/catalog/program/1/1'>
+					<Link href='/catalog/program/1/1' className={styles.series}>
 						<img width={200} height={120} src='/poster.png' alt='poster' />
-						<h3>Заголовок</h3>
+						<h3>Заголовок 1</h3>
 						<p>Description</p>
 					</Link>
 				</Tab>
 				<Tab key='videos' title='3 сезон'>
-					<Link href='/catalog/program/1/1'>
+					<Link href='/catalog/program/1/1' className={styles.series}>
 						<img width={200} height={120} src='/poster.png' alt='poster' />
-						<h3>Заголовок</h3>
+						<h3>Заголовок 2</h3>
 						<p>Description</p>
 					</Link>
 				</Tab>
@@ -70,7 +70,10 @@ export default function Page({ params }: { params: { index: string } }) {
 		<Divider />
 
 		<div className={styles.comments}>
-			<h2>Отзывы</h2>
+			<div className={styles.top}>
+				<h2>Отзывы</h2>
+				<div>Все</div>
+			</div>
 
 			<ul className={styles.commentsList}>
 				<li className={styles.commentItem}>

@@ -55,9 +55,16 @@
 
 .comments {
   @apply mx-5 mt-5 mb-16;
+  .top {
+    @apply mb-4 flex justify-between items-center;
 
-  h2 {
-    @apply font-montserrat font-semibold text-lg text-white mb-4;
+    h2 {
+      @apply font-montserrat font-semibold text-lg text-white;
+    }
+
+    div {
+      @apply font-graphik font-semibold text-base text-accent underline;
+    }
   }
 
   .title {

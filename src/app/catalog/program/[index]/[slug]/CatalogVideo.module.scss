@@ -107,7 +107,19 @@
   @apply mx-5 mt-5 mb-16;
 
   h2 {
-    @apply font-montserrat font-semibold text-lg text-white mb-4;
+    @apply font-graphik font-semibold text-xl text-white;
+  }
+
+  .top {
+    @apply mb-4 flex justify-between items-center;
+
+    h2 {
+      @apply font-graphik font-semibold text-xl text-white;
+    }
+
+    div {
+      @apply font-graphik font-semibold text-base text-accent underline;
+    }
   }
 
   .title {
@@ -133,6 +145,11 @@
 
 .commentItem {
   @apply bg-bg-2 rounded-lg pb-2 mb-2.5;
+}
+
+.commentDescription {
+  @apply px-2 font-graphik font-medium text-base text-white;
+  margin: 0 !important;
 }
 
 .description {
